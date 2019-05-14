@@ -1,0 +1,26 @@
+
+.arrowBox {
+    margin-left: -8px;
+    animation: arrow-animation 1s linear infinite alternate;
+}
+
+.arrowBox:nth-child(1) {
+    animation-delay: 0s
+}
+
+.arrowBox:nth-child(2) {
+    animation-delay: 0.5s
+}
+
+.arrowBox:nth-child(3) {
+    animation-delay: 1s
+}
+
+@keyframes arrow-animation {
+    from {
+        color:#fdb364
+    }
+    to {
+        color: red
+    } 
+}

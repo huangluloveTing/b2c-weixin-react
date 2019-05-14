@@ -1,0 +1,15 @@
+
+
+.scrolAni {
+    animation: scrollAnimation 1s linear 0s infinite;
+    overflow: scroll;
+}
+
+@keyframes scrollAnimation {
+    from {
+        transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(100%)
+    }
+}

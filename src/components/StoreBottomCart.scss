@@ -1,0 +1,64 @@
+.cart-container {
+    box-sizing: border-box;
+    z-index: 1000;
+    width: 100%;
+    height: sizeToBase(50);
+    @include shadow(0, -2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row;
+    background: #fff;
+    .cart-icon {
+        margin: 0 sizeToBase(10);
+        width: sizeToBase(40);
+        height: sizeToBase(40);
+        @include gradient(#ffa600, #ff7527);
+        @include border(20);
+        position: relative;
+        &::after {
+            position: absolute;
+            display: inline-block;
+            line-height:sizeToBase(14);
+            height: sizeToBase(14);
+            min-width: sizeToBase(14);
+            padding: 2px;
+            @include textStyle(10 , #fff , $align:center);
+            @include border(14 , $width: 1);
+            content: '777';
+            background: #ff604f;
+            right: 0px;
+        }
+    }
+    .cart-info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-grow: 1;
+        span {
+            &:nth-of-type(1) {
+                @include textStyle(15 , #666);
+            }
+            &:nth-of-type(2) {
+                position: relative;
+                padding-left: sizeToBase(5);
+                @include textStyle(18 , #ff5b0f, $weight:bold);
+                &:before {
+                    content: '￥';
+                    position: absolute;
+                    bottom: 0;
+                    left: sizeToBase(-5);
+                    @include textStyle(10 , #ff5b0f);
+                }
+            }
+        }
+
+    }
+    .pay {
+        height: 100%;
+        width: sizeToBase(117);
+        @include gradient(#ffa600, #ff7527);
+        @include textStyle(17 , #fff , $weight: bold , $align:center);
+        line-height: sizeToBase(50);
+    }
+}

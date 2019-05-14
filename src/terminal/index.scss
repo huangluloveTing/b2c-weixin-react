@@ -1,0 +1,249 @@
+$cut-height : sizeToBase(100);
+
+.store-page {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    height: 100vh;
+    overflow: hidden;
+    .middleContaner {
+        background: $nv_bg;
+        flex: 1 0 auto;
+        display:flex;
+        flex-flow: column;
+        height:calc(100% - #{$cut-height});
+        .contatiner {
+            margin-top: sizeToBase(30);
+            border-top-left-radius: sizeToBase(10);
+            border-top-right-radius: sizeToBase(10);
+            background: #fff;
+            position: relative;
+            display:flex;
+            flex-flow: column;
+            padding: sizeToBase(10);
+        }
+        .header-line {
+            height: 1px;
+            width: fill-available;
+            background: #f0f0f0;
+        }
+        .headerLogoName {
+            width:100%
+        }
+        .Logon {
+            position: absolute;
+            top: sizeToBase(-25);
+            left:10px;
+            height:sizeToBase(74);
+            width:sizeToBase(74);
+        }
+    }
+    .siteTags {
+        height: sizeToBase(40);
+        display:flex;
+        justify-content: start;
+        align-items: center;
+        flex-flow: row nowrap;
+        margin-top: sizeToBase(10);
+        overflow: scroll;
+        .tagContainer {
+            background:#ff604f;
+            padding: 3px 4px;
+            margin-right: 5px;
+            @include textStyle(12 , #fff);
+            @include border(3);
+            span {
+                white-space: normal;
+            }
+        }
+    }
+}
+
+.header {
+    @include border(5 , transparent , 1);
+    overflow: hidden;
+}
+.header img {
+    width: 100%;
+    height: 100%;
+}
+.siteAddressContent {
+    .siteAddress {
+        margin-left: sizeToBase(84);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
+        .address {
+            display: flex;
+            flex-flow: column;
+            position: relative;
+            span {
+                @include textStyle(17 , #161616 , $weight:bold)
+            }
+            .adver {
+                @include textStyle(12, #666666)
+            }
+            &:after {
+                content: '▼';
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: sizeToBase(-20);
+                @include textStyle(17 , #666666);
+                padding: sizeToBase(2);
+            }
+        }
+        .yinli-card {
+            width: sizeToBase(75);
+            height: sizeToBase(36);
+            background-image: url('../assets/imgs/银犁卡背景图.png');
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            line-height: sizeToBase(36);
+            @include textStyle(14 , #ffffff, $weight: bold , $align:center);
+            @include border(5)
+        }
+    }
+}
+.store-comms {
+    background: #fff;
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    background: #f0f0f0;
+    height: 100%;
+    .left-list {
+        width: 22%;
+        height: 100%;
+        .list-item {
+            height: sizeToBase(46);
+            line-height: sizeToBase(46);
+            @include textStyle(13 , #666666 , $align:center);
+            &-select {
+                @extend .list-item;
+                background: #fff;
+                @include textStyle(13 , #ff9421 , $align:center , $weight:bold)
+            }
+        }
+    }
+    .right-list {
+        width: 78%;
+        display: flex;
+        flex-flow: column;
+        align-items: stretch;
+        .com-secon-cat {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            i {
+                padding: 5px;
+                background: white;
+            }
+        }
+        .com-container {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            position: relative;
+            .com-img {
+                width: sizeToBase(100);height: sizeToBase(100);overflow: hidden;
+                margin: 10px;
+                box-sizing: border-box;
+                img {
+                    width: 100%;height: 100%;
+                }
+            }
+            .seperate-line {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background: #eee;
+            }
+        }
+        .com-info {
+            display: flex;
+            flex: 1;
+            flex-flow: column;
+            .comm-name {
+                
+                span {
+                    @include textStyle(14 , #333333);
+                    padding: 1px 2px;
+                    vertical-align: middle;
+                }
+                .new-tag {
+                    @include border(2, transparent);
+                    @include textStyle(10 , #fff);
+                    @include gradient(#f85a07 , #ff1900);
+                }
+            }
+            .tags {
+                overflow: hidden;
+                & > span {
+                    float: left;
+                    padding: 0.5px 2px;
+                    @include textStyle(8 , #ff9421);
+                    @include border(2 , #ff9421 , 1);
+                    margin: 2px 0;
+                    margin-right: 3px; 
+                }
+            }
+            .info-bottom {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .price-comm {
+                display: flex;
+                flex-flow: column;
+                align-items: flex-start;
+                .price-half {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    padding: 2px;
+                    .price {
+                        @include textStyle(18 , #ff5b0f , $weight:bold);
+                        position: relative;
+                        padding-left: 10px;
+                        &:before {
+                            content: '￥';
+                            @include textStyle(10 , #ff5b0f);
+                            position: absolute;
+                            bottom: 1px;
+                            left: -5px;
+                        }
+                    }
+                    .half-price {
+                        @include border(2 , #ff604f , 1);
+                        @include textStyle(9 , #ff604f , $align:center);
+                        padding: 1px 2px;
+                        margin-left: 5px;
+                    }
+                }
+                .delte-comment {
+                    @include textStyle(10 , #999);
+                    .delete-price {
+                        text-decoration: line-through;
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .buy-comm {
+                color: #ff9421;
+                i {
+                    @include textStyle(26, #ff9421);
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    
+}
+

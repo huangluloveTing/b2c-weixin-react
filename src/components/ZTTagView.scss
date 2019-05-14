@@ -1,0 +1,21 @@
+.tag-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    overflow: scroll;
+    padding: 5px;
+    -webkit-overflow-scrolling: touch;
+    @include hiddenScrollBar();
+    .tag {
+        margin: 0 5px;
+        @include textStyle(14 , #999999 , $align: center , $weight: bold);
+        padding: 2px 8px;
+        &-selected {
+            @include border(2 , #dddddd , 1);
+            @include textStyle(14, #ff9421, $align: center ,$weight: bold);
+        }
+        & > span {
+            white-space: nowrap;
+        }
+    }
+}

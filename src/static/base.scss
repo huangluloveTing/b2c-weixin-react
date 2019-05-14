@@ -1,0 +1,23 @@
+$nav_color : #51535c;
+$tag_color : #ff604f;
+$ma_color : #ff9421;
+$su_color : #999999;
+$ma_t_color: #333333;
+$cho_color: #666666;
+
+$base_width : 375;
+
+.nav_bg {
+    background: $nav_color
+}
+
+@function text_size($size) {
+    @return $size / $base_width;
+}
+
+// @mixin normalText($color:$su_color , $size:14) {
+//     color: $su_color;
+//     // font-size: text_size(15px)
+// }
+
+

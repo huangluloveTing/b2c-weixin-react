@@ -1,0 +1,44 @@
+$base_width : 375;
+$nv_bg : #51535c;
+
+body {
+    box-sizing: border-box;
+}
+
+@function sizeToBase($size : 14) {
+    @if $size > 2 {
+        $size : ($size - 1);
+    }
+    $ca_size : $size/ $base_width * 100vw;
+    @return $ca_size;
+};
+
+@function cac_height($size) {
+    @return calc(100% - #{sizeToBase($size)});
+}
+
+@mixin border($radius: 5,$color: #fff,$width: 0,$style: solid) {
+    border: sizeToBase($width) $style $color;
+    border-radius: sizeToBase($radius);
+};
+
+@mixin textStyle($size: 12 , $color:#333 , $align: start , $weight: normal) {
+    color: $color;
+    font-size: sizeToBase($size);
+    text-align: $align;
+    font-weight: $weight
+}
+
+@mixin gradient($startColor:#ff1600 , $endColor:#ff7527 ,) {
+    background: linear-gradient(to right , $startColor , $endColor);
+}
+
+@mixin shadow($h-shadow:0, $v-shadow:2 , $blur:2 ,$spread: 0, $color:#f5f5f5) {
+    box-shadow: sizeToBase($h-shadow) sizeToBase($v-shadow) sizeToBase($blur) sizeToBase($spread) $color;
+}
+
+@mixin hiddenScrollBar() {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
